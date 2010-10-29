@@ -10,7 +10,4 @@ class Gallery < Noodall::Component
       assets.find{|a| a._id == id}
     end.compact
   end
-
-  allowed_positions :small, :wide, :main
-
 end

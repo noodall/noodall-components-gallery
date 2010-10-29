@@ -4,7 +4,7 @@ Feature: Gallery Component
   to create a gallery of images within a template
 
   @javascript
-  Scenario: Gallery Module
+  Scenario: Add Gallery Component
     Given I am editing content
     When I click a "Wide" component slot
     And select the "Gallery" component
