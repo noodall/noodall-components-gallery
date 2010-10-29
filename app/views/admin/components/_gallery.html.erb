@@ -1,0 +1,49 @@
+<%= fields_for :node do |f| %>
+  <%=   f.fields_for slot_name, component do |c| %>
+    <div class="multi-file-component">
+      <%= c.hidden_field :_type %>
+      <fieldset class="multi-file-details">
+        <legend>Gallery Details</legend>
+        <p>
+          <%= c.label :title %><br />
+          <span class="input-wrap"><%= c.text_field :title %></span>
+        </p>
+
+        <p>
+          <%= c.label :description %><br />
+          <span class="input-wrap"><%= c.text_area :description, :rows => 4 %></span>
+        </p>
+      </fieldset>
+      <fieldset class="multi-file-files images">
+        <legend>Images</legend>
+        <p><span class="add-multi-asset">Add File</span><span class="types">Images</span></p>
+        <ol>
+          <% component.assets.each_with_index do |asset,i| %>
+            <li class="multi-file file-selectable">
+              <span class="file-detail"><%= image_tag( asset.url('70x70#', :jpg) ) %></span>
+              <span class="delete" title="Remove this file">Delete</span>
+              <span class="edit" title="Edit this file">Edit</span>
+              <div class="file-form">
+                <p>
+                  <span class="select-file">Select File</span>
+                  (<span class="types">Images</span>)
+                  <%= hidden_field_tag "node[#{slot_name}][asset_ids][]", asset.id, :id => "node_#{slot_name}_asset_id_#{i}", :class => "asset_id" %>
+                </p>
+              </div>
+            </li>
+          <% end %>
+          <li class="multi-file file-selectable">
+            <span class="delete" title="Remove this file">Delete</span>
+            <span class="edit" title="Edit this file">Edit</span>
+            <div class="file-form">
+              <p>
+                <span class="select-file">Select File</span>
+                (<span class="types">Images</span>)
+                <%= hidden_field_tag "node[#{slot_name}][asset_ids][]", '', :id => nil, :class => "asset_id" %>
+              </p>
+            </div>
+          </li>
+        </ol>
+    </fieldset></div>
+  <%   end
+end %>
