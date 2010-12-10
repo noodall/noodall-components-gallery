@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    noodall-components-gallery (0.0.2)
+    noodall-components-gallery (0.0.3)
+      noodall-ui (>= 0.0.15)
 
 GEM
   remote: http://rubygems.org/
@@ -102,7 +103,7 @@ GEM
       mongo_mapper (~> 0.8.6)
       ramdiv-mongo_mapper_acts_as_tree (~> 0.1.1)
       ruby-stemmer
-    noodall-ui (0.0.14)
+    noodall-ui (0.0.15)
       dynamic_form
       noodall-core
       thoughtbot-sortable_table (= 0.0.6)
@@ -178,7 +179,7 @@ DEPENDENCIES
   faker (~> 0.3.1)
   launchy
   noodall-components-gallery!
-  noodall-ui
+  noodall-ui (>= 0.0.15)
   rails (= 3.0.1)
   rmagick
   rspec-rails (>= 2.0.0.beta)
