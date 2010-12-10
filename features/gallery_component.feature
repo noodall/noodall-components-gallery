@@ -1,4 +1,3 @@
-@wip
 Feature: Gallery Component
   To provide the ability to show many images on the website, website editors will be able
   to create a gallery of images within a template
