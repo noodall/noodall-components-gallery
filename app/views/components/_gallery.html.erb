@@ -1,6 +1,5 @@
 <div id="<%= slot_code %>" class="component gallery <%= component.style %> <%= expand ? 'double' : 'single' %> <%= additional_classes %>">
-  <h2><%=h component.title %></h2>
-
+  <h3><%=h component.title %></h3>
   <div class="carousel-wrap">
     <div class="carousel">
       <ul class="gallery <%= component.style %>">
@@ -17,7 +16,5 @@
       </ul>
     </div>
   </div>
-
-  <p><%= component.description %></p>
-
+  <p><%= simple_format component.description %></p>
 </div>
